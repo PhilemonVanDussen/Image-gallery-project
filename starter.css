@@ -1,6 +1,6 @@
-/* Your first and last name */
-/* Current date */
-/* Project name */
+/* Philemon VanDussen */
+/* 4/22/2026 */
+/* Image Gallery Project */
 
 
 /* CSS reset rule */
@@ -16,10 +16,80 @@
   --font-size: 16px;
   --aquamarine: rgb(127, 255, 212);
   --white: #fff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background-color: #f4f4ff;
+}
+
+#galler-container {
+  display: grid;
+  margin: 20px;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,1);
+  gap: 15px;
+
+  grid-template-areas:
+  'title'
+  'image'
+  'caption'
+  'btn-prev'
+  'btn-pause'
+  'btn-next';
 
 }
 
+h1 {
+  grid-area: title;
+  margin: 0;
+}
 
+#gallery-img {
+  grid-area: image;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  justify-self: center;
+}
 
+#gallery-caption {
+  grid-area: caption;
+  margin:0;
+  font-size: 18px;
+}
 
+#prev-btn  {grid-area: prev-btn};
+#pause-btn  {grid-area: prev-btn};
+#next-btn  {grid-area: prev-btn};
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: var(--aquamarine);
+  border:none;
+  border-radius: 4px;
+}
+
+button :hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 600px) {
+  #gallery-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'title title title'
+    'image image image'
+    'caption caption caption'
+    'btn-prev btn-pause btn-next';
+  }
+}
 
